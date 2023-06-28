@@ -20,10 +20,12 @@ $semantic-colors:(
   light:(
     text: $dio-grey,
     body-background: $pure-white,
+    social-link-background: rgba($pure-white, 0.75),
   ),
   dark:(
     text: $pure-white,
     body-background: $dio-grey,
+    social-link-background: rgba($dio-grey, 0.55),
   ),
 );
 
@@ -48,7 +50,7 @@ $semantic-colors:(
   }
 }
 
-// Animations //TODO do I need this animation???
+// Animations
 $sprint: all 0.20s ease-in-out;
 $run: all 0.30s ease-in-out;
 $jog: all 0.50s ease-in-out;

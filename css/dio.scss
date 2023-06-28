@@ -128,7 +128,7 @@ body{
         color: inherit;
         transition: $sprint;
         &:hover{
-          background-color: rgba($pure-white, 0.75); //TODO semantic color for dark mode
+          background-color: semantic-color(social-link-background);
         }
       }
     }
