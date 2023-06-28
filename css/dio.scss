@@ -98,6 +98,9 @@ body{
     font-size: .5em;
     margin-block-end: 2em;
     margin-block-start: 10em;
+    border-top: dotted 0.1em;
+    padding-block-start: 2em;
+
     @include breakpoint(small only){
       font-size: 0.75em;
     }
