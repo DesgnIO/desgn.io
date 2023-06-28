@@ -38,50 +38,38 @@ img {
   }
 }
 
-body{
+html{
   position: relative;
+  &:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url(../img/soft-blue.png), url(../img/mango.png);
+    background-position: top -45em left -45em, bottom -40em right -50em;
+    background-size: 175em, 175em;
+    background-repeat: no-repeat;
+    z-index: -1;
+    @media (prefers-color-scheme: dark) {
+      filter: brightness(0.5);
+    }
+    @include breakpoint(small only){
+      background-position: top -10em left -20em, bottom -15em right -25em;
+      background-size: 60em, 60em;
+    }
+  }
+}
+
+body{
   font-family: $space-grotesk;
   font-weight: $space-grotesk-light;
   font-size: 3rem;
   color: semantic-color(text);
   background-color: semantic-color(body-background);
-  // TODO resolve overflow issue
   @include breakpoint(small only){
     font-size: 1.5rem;
-  }
-  &::before{
-    content: "";
-    position: absolute;
-    background: url(/img/soft-blue.png);
-    width: 250%;
-    aspect-ratio: 4/3;
-    top: -50%;
-    left: -100%;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: rotate(0deg);
-    z-index: -1;
-    @media (prefers-color-scheme: dark) {
-      filter: brightness(0.5);
-    }
-  }
-  &::after{
-    content: "";
-    position: absolute;
-    background: url(/img/mango.png);
-    width: 250%;
-    aspect-ratio: 4/3;
-    bottom: -50%;
-    right: -75%;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: rotate(180deg);
-    z-index: -1;
-    @media (prefers-color-scheme: dark) {
-      filter: brightness(0.5);
-    }
   }
 
   header{
