@@ -46,6 +46,9 @@ body{
   color: semantic-color(text);
   background-color: semantic-color(body-background);
   // TODO resolve overflow issue
+  @include breakpoint(small only){
+    font-size: 1.5rem;
+  }
   &::before{
     content: "";
     position: absolute;
@@ -95,26 +98,36 @@ body{
     font-size: .5em;
     margin-block-end: 2em;
     margin-block-start: 10em;
+    @include breakpoint(small only){
+      font-size: 0.75em;
+    }
     span{
       font-weight: $space-grotesk-bold;
     }
-    .logo-wrapper{
-      margin-inline-end: 1em;
-      svg{
-        height: 1.5em;
-        path{
-          fill: semantic-color(text);
+    .left-section{
+      @include breakpoint(small only){
+        margin-block-end: 1em;
+      }
+      .logo-wrapper{
+        margin-inline-end: 1em;
+        svg{
+          height: 1.5em;
+          path{
+            fill: semantic-color(text);
+          }
         }
       }
     }
-    .social{
-      padding: 0.25em;
-      border-radius: $tile-radius;
-      text-decoration: none;
-      color: inherit;
-      transition: $sprint;
-      &:hover{
-        background-color: rgba($pure-white, 0.75); //TODO semantic color for dark mode
+    .right-section{
+      .social{
+        padding: 0.25em;
+        border-radius: $tile-radius;
+        text-decoration: none;
+        color: inherit;
+        transition: $sprint;
+        &:hover{
+          background-color: rgba($pure-white, 0.75); //TODO semantic color for dark mode
+        }
       }
     }
   }
@@ -126,6 +139,9 @@ body{
     p{
       margin-bottom: 0;
       margin-block-end: 6rem;
+      @include breakpoint(small only){
+        margin-block-end: 3rem;
+      }
     }
   }
 }
