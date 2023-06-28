@@ -1,0 +1,83 @@
+//******* Variables
+
+// Numbers
+$tile-radius: 10px;
+$tile-radius-medium: 20px;
+$tile-radius-big: 30px;
+$pill-radius: 500px;
+
+// Colors
+$pure-white: #ffffff;
+$pure-black: #000000;
+
+////Brand Colors
+$dio-grey: #313131;
+
+
+//Semantic colors maps the color palette above to their use across the application
+//// This method allows for several flavors of a color to be added such as a dark mode or a high contrast for example
+$semantic-colors:(
+  light:(
+    text: $dio-grey,
+  ),
+  dark:(
+    text: $pure-white,
+  ),
+);
+
+//Helper function to build CSS colors
+@function compose-color($color-key) {
+  @return '--color-#{$color-key}';
+}
+
+//Function to be called inline for color mapping
+@function semantic-color($color-key) {
+  @return (var(--color-#{$color-key}));
+}
+
+:root{
+  @each $key, $value in map-get($semantic-colors, 'light') {
+    #{compose-color($key)}: #{$value};
+  }
+  @media (prefers-color-scheme: dark) {
+    @each $key, $value in map-get($semantic-colors, 'dark') {
+      #{compose-color($key)}: #{$value};
+    }
+  }
+}
+
+// Animations //TODO do I need this animation???
+$sprint: all 0.20s ease-in-out;
+$run: all 0.30s ease-in-out;
+$jog: all 0.50s ease-in-out;
+
+@keyframes boing{
+  15%{
+    transform-origin: center center;
+    transform:scale(1.4, 1.2)
+  }
+
+  40%{
+    transform-origin: center center;
+    transform:scale(0.9, 0.9)
+  }
+
+  75%{
+    transform-origin: center center;
+    transform:scale(1.08, 1)
+  }
+
+  100%{
+    transform-origin: center center;
+    transform:scale(1, 1)
+  }
+}
+
+// Typography
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+$space-grotesk: 'Space Grotesk', sans-serif;
+$space-grotesk-light: 300;
+$space-grotesk-regular: 400;
+$space-grotesk-medium: 500;
+$space-grotesk-semibold: 600;
+$space-grotesk-bold: 700;
