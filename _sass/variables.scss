@@ -19,9 +19,11 @@ $dio-grey: #313131;
 $semantic-colors:(
   light:(
     text: $dio-grey,
+    body-background: $pure-white,
   ),
   dark:(
     text: $pure-white,
+    body-background: $dio-grey,
   ),
 );
 

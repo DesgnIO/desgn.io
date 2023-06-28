@@ -39,20 +39,62 @@ img {
 }
 
 body{
+  position: relative;
   font-family: $space-grotesk;
   font-weight: $space-grotesk-light;
   font-size: 3rem;
   color: semantic-color(text);
+  background-color: semantic-color(body-background);
+  // TODO resolve overflow issue
+  &::before{
+    content: "";
+    position: absolute;
+    background: url(/img/soft-blue.png);
+    width: 250%;
+    aspect-ratio: 4/3;
+    top: -50%;
+    left: -100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    z-index: -1;
+    @media (prefers-color-scheme: dark) {
+      filter: brightness(0.5);
+    }
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    background: url(/img/mango.png);
+    width: 250%;
+    aspect-ratio: 4/3;
+    bottom: -50%;
+    right: -75%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+    z-index: -1;
+    @media (prefers-color-scheme: dark) {
+      filter: brightness(0.5);
+    }
+  }
+
   header{
     margin-block-start: 2em;
     margin-block-end: 2em;
     svg{
       height: 2em;
+      path{
+        fill: semantic-color(text);
+      }
     }
   }
   footer{
     font-size: .5em;
     margin-block-end: 2em;
+    margin-block-start: 10em;
     span{
       font-weight: $space-grotesk-bold;
     }
@@ -60,12 +102,26 @@ body{
       margin-inline-end: 1em;
       svg{
         height: 1.5em;
+        path{
+          fill: semantic-color(text);
+        }
+      }
+    }
+    .social{
+      padding: 0.25em;
+      border-radius: $tile-radius;
+      text-decoration: none;
+      color: inherit;
+      transition: $sprint;
+      &:hover{
+        background-color: rgba($pure-white, 0.75); //TODO semantic color for dark mode
       }
     }
   }
   main{
     .signoff{
       font-weight: $space-grotesk-bold;
+      margin-block-end: 0;
     }
     p{
       margin-bottom: 0;
