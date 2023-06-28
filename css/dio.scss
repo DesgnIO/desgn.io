@@ -41,17 +41,35 @@ img {
 body{
   font-family: $space-grotesk;
   font-weight: $space-grotesk-light;
-  font-size: 3em;
+  font-size: 3rem;
   color: semantic-color(text);
   header{
-
+    margin-block-start: 2em;
+    margin-block-end: 2em;
+    svg{
+      height: 2em;
+    }
   }
   footer{
-
+    font-size: .5em;
+    margin-block-end: 2em;
+    span{
+      font-weight: $space-grotesk-bold;
+    }
+    .logo-wrapper{
+      margin-inline-end: 1em;
+      svg{
+        height: 1.5em;
+      }
+    }
   }
   main{
     .signoff{
       font-weight: $space-grotesk-bold;
+    }
+    p{
+      margin-bottom: 0;
+      margin-block-end: 6rem;
     }
   }
 }
