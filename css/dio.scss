@@ -75,10 +75,16 @@ body{
   header{
     margin-block-start: 2em;
     margin-block-end: 2em;
-    svg{
-      height: 2em;
-      path{
-        fill: semantic-color(text);
+    a{
+      svg{
+        height: 2em;
+        transition: $sprint;
+        path{
+          fill: semantic-color(text);
+        }
+        &:hover{
+          transform: scale(1.1);
+        }
       }
     }
   }
