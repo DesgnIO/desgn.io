@@ -7,7 +7,6 @@
 
 # Site settings
 title: Dzgn.IO
-email: hello@dzgn.io
 description: > # this means to ignore newlines until "baseurl:"
   Developers rock the command line. Designers visualize the impossible. In the same room, they speak different languages. In one person…
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -15,16 +14,3 @@ url: "https://dzgn.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
-
-plugins:
-  - jekyll-sitemap
-
-collections:
-  team:
-    output: true
-
-  works:
-    output: true
-
-  toolkit:
-    output: true

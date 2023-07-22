@@ -1,0 +1,149 @@
+---
+  # Front matter comment to ensure Jekyll properly reads file.
+---
+
+@charset "utf-8";
+@import 'app';
+@import 'variables';
+
+.no-select{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
+// Visually hide any element (mostly text) accessibly.
+.visually-hidden{
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+  @media (prefers-color-scheme: dark) {
+    filter: brightness(0.8);
+  }
+}
+
+html{
+  position: relative;
+  &:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url(../img/soft-blue.png), url(../img/mango.png);
+    background-position: top -45em left -45em, bottom -40em right -50em;
+    background-size: 175em, 175em;
+    background-repeat: no-repeat;
+    z-index: -1;
+    @media (prefers-color-scheme: dark) {
+      filter: brightness(0.5);
+    }
+    @include breakpoint(small only){
+      background-position: top -10em left -20em, bottom -15em right -25em;
+      background-size: 60em, 60em;
+    }
+  }
+}
+
+body{
+  font-family: $space-grotesk;
+  font-weight: $space-grotesk-light;
+  font-size: 3rem;
+  color: semantic-color(text);
+  background-color: semantic-color(body-background);
+  @include breakpoint(small only){
+    font-size: 1.5rem;
+  }
+
+  header{
+    margin-block-start: 2em;
+    margin-block-end: 2em;
+    a{
+      svg{
+        height: 2em;
+        transition: $sprint;
+        path{
+          fill: semantic-color(text);
+        }
+        &:hover{
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  footer{
+    font-size: .5em;
+    margin-block-end: 2em;
+    margin-block-start: 10em;
+    border-top: dotted 0.1em;
+    padding-block-start: 2em;
+
+    @include breakpoint(small only){
+      font-size: 0.75em;
+    }
+    span{
+      font-weight: $space-grotesk-bold;
+    }
+    .left-section{
+      a{
+        text-decoration: none;
+        color: inherit;
+        transition: $sprint;
+      }
+      @include breakpoint(small only){
+        margin-block-end: 1em;
+      }
+      .logo-wrapper{
+        margin-inline-end: 1em;
+        svg{
+          height: 1.5em;
+          path{
+            fill: semantic-color(text);
+          }
+        }
+      }
+    }
+    .right-section{
+      .social{
+        padding: 0.25em;
+        border-radius: $tile-radius;
+        text-decoration: none;
+        color: inherit;
+        transition: $sprint;
+        &:hover{
+          background-color: semantic-color(social-link-background);
+        }
+      }
+    }
+  }
+  main{
+    .signoff{
+      font-weight: $space-grotesk-bold;
+      margin-block-end: 0;
+    }
+    p{
+      margin-bottom: 0;
+      margin-block-end: 6rem;
+      @include breakpoint(small only){
+        margin-block-end: 3rem;
+      }
+    }
+  }
+}

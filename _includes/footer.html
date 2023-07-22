@@ -1,24 +1,18 @@
-<footer>
-  <a class="social" target="_blank" href="https://github.com/DzgnIO"><i class="fa fa-github fa-2x"></i></a>
-  <a class="social" target="_blank" href="https://twitter.com/Dzgn_IO"><i class="fa fa-twitter fa-2x"></i></a>
-  <a class="social" target="_blank" href="https://www.instagram.com/dzgnio/"><i class="fa fa-instagram fa-2x"></i></a>
-  <a class="social" target="_blank" href="https://medium.com/dzgn-io"><i class="fa fa-medium fa-2x"></i></a>
-  <a class="social" target="_blank" href="http://www.facebook.com/dzgnio"><i class="fa fa-facebook-official fa-2x"></i></a>
-  <br><span class="copyright noSelect">Copyright Dzgn.IO</span>
+<footer class="cell grid-x align-justify align-middle">
+  <div class="cell small-12 medium-shrink grid-x left-section">
+    <a class="cell grid-x" href="{{site.url}}">
+      <div class="cell shrink logo-wrapper">
+        {%- include dio-logo.svg -%}
+      </div>
+      <div class="cell shrink">
+        <span>Dzgn.IO</span>
+      </div>
+    </a>
+  </div>
+  <div class="cell small-12 medium-shrink right-section">
+    <span>Connect:</span>
+    {% include external-link.html css-class="social" link="https://www.linkedin.com/company/dzgnio" content="LinkedIn" %}
+    {% include external-link.html css-class="social" link="https://twitter.com/Dzgn_io" content="Twitter" %}
+    {% include external-link.html css-class="social" link="https://www.instagram.com/dzgnio/" content="Instagram" %}
+  </div>
 </footer>
-
-<script src="/assets/js/jquery.js"></script>
-<script src="/assets/js/what-input.js"></script>
-<script src="/assets/js/foundation.min.js"></script>
-<script>
-  $(document).foundation();
-</script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135749885-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-135749885-1');
-</script>
